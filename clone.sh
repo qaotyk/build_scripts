@@ -18,6 +18,11 @@
 CLONE=  "git clone -b"
 GITHUB= "https://github.com"
 GITLAB= "https:/gitlab.com"
+USER=	""
+
+# Organization
+DM="DoritosMotorola"
+ND="NemesisDevelopers"
 
 # Motorola Paths
 DEVICE= "device/motorola"
