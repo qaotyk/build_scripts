@@ -15,19 +15,24 @@
 #
 
 # Command List
-CLONE=  "git clone -b"
-GITHUB= "https://github.com"
-GITLAB= "https:/gitlab.com"
-USER=	""
+CLONE="git clone -b"
+GITHUB="https://github.com"
+GITLAB="https:/gitlab.com"
+USER=""
 
 # Organization
 DM="DoritosMotorola"
 ND="NemesisDevelopers"
 
 # Motorola Paths
-DEVICE= "device/motorola"
-COMMON= "device/motorola"
-VENDOR= "vendor/motorola"
-KERNEL= "kernel/motorola"
+DEVICE="device/motorola"
+COMMON="device/motorola"
+VENDOR="vendor/motorola"
+KERNEL="kernel/motorola"
 MOTCAMERA="packages/apps/MotCamera2"
 
+# Setup
+${CLONE} ${GITHUB}/${USER}/ ${DEVICE}
+${CLONE} ${GITHUB}/${USER}/ ${COMMON}
+${CLONE} ${GITHUB}/${USER}/ ${VENDOR}
+${CLONE} ${GITHUB}/${USER}/ ${KERNEL}
