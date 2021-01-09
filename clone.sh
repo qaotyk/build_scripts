@@ -24,6 +24,14 @@ USER=""
 DM="DoritosMotorola"
 ND="NemesisDevelopers"
 
+# Branch
+C10-X="android-10"
+C11-X="android-11"
+Q10-X="lineage-17.1"
+R11-X="lineage-18.1"
+S10-X="staging/lineage-17.1"
+S11-X="staging/lineage-18.1"
+
 # Motorola Paths
 DEVICE="device/motorola"
 COMMON="device/motorola"
