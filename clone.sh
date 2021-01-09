@@ -39,8 +39,8 @@ VENDOR="vendor/motorola"
 KERNEL="kernel/motorola"
 MOTCAMERA="packages/apps/MotCamera2"
 
-# Setup
-${CLONE} ${GITHUB}/${USER}/ ${DEVICE}
-${CLONE} ${GITHUB}/${USER}/ ${COMMON}
-${CLONE} ${GITHUB}/${USER}/ ${VENDOR}
-${CLONE} ${GITHUB}/${USER}/ ${KERNEL}
+# Environment Setup
+${CLONE} ${R11-X} ${GITHUB}/${USER}/ ${DEVICE}
+${CLONE} ${R11-X} ${GITHUB}/${USER}/ ${COMMON}
+${CLONE} ${R11-X} ${GITHUB}/${USER}/ ${VENDOR}
+${CLONE} ${R11-X} ${GITHUB}/${USER}/ ${KERNEL}
