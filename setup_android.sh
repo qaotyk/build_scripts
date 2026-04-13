@@ -38,23 +38,40 @@ while true; do
     # Validate user inpuut
         case $jdk_version in
         1)
-        echo "Installing OpenJDK for Android 7 - 10 (JDK 8)"
-        sudo apt install openjdk-8-jdk -y
+        # Check if OpenJDK 8 is already installed
+        if java -version 2>&1 | grep -q "1.8"; then
+            echo "OpenJDK 8 is already installed. Skipping installation."
+        else
+            echo "Installing OpenJDK for Android 7 - 10 (JDK 8)"
+            sudo apt install openjdk-8-jdk -y
+            echo "Done: OpenJDK 8 installed successfully."
+        fi
         break # Installed JDK 8
         ;;
         2)
-        echo "Installing OpenJDK for Android 11 - 14+ (JDK 11)"
-        sudo apt install openjdk-11-jdk -y
+        # Check if OpenJDK 11 is already installed
+        if java -version 2>&1 | grep -q "1.11"; then
+            echo "OpenJDK 11 is already installed. Skipping installation."
+        else
+            echo "Installing OpenJDK for Android 11 - 14+ (JDK 11)"
+            sudo apt install openjdk-11-jdk -y
+            echo "Done: OpenJDK 11 installed successfully."
+        fi
         break # Installed JDK 11
         ;;
         3)
-        echo "Installing OpenJDK for Legacy Android 4.4 - 6 (JDK 7)"
-        sudo apt install openjdk-7-jdk -y
+        # Check if OpenJDK 7 is already installed
+        if java -version 2>&1 | grep -q "1.7"; then
+            echo "OpenJDK 7 is already installed. Skipping installation."
+        else
+            echo "Installing OpenJDK for Legacy Android 4.4 - 6 (JDK 7)"
+            sudo apt install openjdk-7-jdk -y
+            echo "Done: OpenJDK 7 installed successfully."
+        fi
         break # Installed JDK 7
         ;;
         *)
         echo "Invalid option, please select an Android Build."
         ;;
         esac
-        
 done
