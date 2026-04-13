@@ -118,3 +118,11 @@ else
     sudo apt install git -y
     echo "Done: Git installed successfully."
 fi
+
+# Add Android Environment Setup: Install Dependencies
+echo "Step 2 [4/5]: Setup Android Environment: Installing Build Dependencies"
+echo "Installing required packages for Android build environment..."
+
+# Install dependencies from the list
+xargs -a install_dependencies.txt sudo apt install -y
+echo "Done: Android Build Dependencies installed successfully."
