@@ -107,3 +107,14 @@ else
     fi
     echo "Done: Repo installed and added to PATH successfully."
 fi
+
+# Add Android Environment Setup: Git Installation
+echo "Step 2 [3/5]: Setup Android Environment: Installing Git"
+echo "Check if Git is already installed..."
+if command -v git &> /dev/null; then
+    echo "Git is already installed. Skipping installation."
+else
+    echo "Git not found. Installing Git"
+    sudo apt install git -y
+    echo "Done: Git installed successfully."
+fi
