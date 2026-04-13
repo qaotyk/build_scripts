@@ -21,7 +21,7 @@ sudo apt autoremove -y
 # Finish MOD: Update System
 echo "Done: Update System completed!"
 
-# Add Android Environment Setup
+# Add Android Environment Setup: JDK Installation
 echo "Step 2 [1/5]: Setup Android Environment: Installing JDK"
 
 # Select JDK version based on Android version
@@ -75,3 +75,17 @@ while true; do
         ;;
         esac
 done
+
+# Add Android Environment Setup: Repo Installation
+echo "Step 2 [2/5]: Setup Android Environment: Installing Repo"
+
+# Check if Repo is already installed
+if command -v repo &> /dev/null; then
+    echo "Repo is already installed. Skipping installation."
+else
+    echo "Installing Repo"
+    mkdir -p ~/bin
+    curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+    chmod a+x ~/bin/repo
+    echo "Done: Repo installed successfully."
+fi
