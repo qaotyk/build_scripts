@@ -78,14 +78,32 @@ done
 
 # Add Android Environment Setup: Repo Installation
 echo "Step 2 [2/5]: Setup Android Environment: Installing Repo"
+echo "Check if Repo is already installed..."
 
-# Check if Repo is already installed
 if command -v repo &> /dev/null; then
-    echo "Repo is already installed. Skipping installation."
+
+    # Check if Repo is in the user's PATH
+    if [[ ":$PATH:" == *":$HOME/bin:"* ]]; then
+        echo "Repo is already installed and added to PATH. Skipping installation."
+    else
+    # Add Repo to PATH
+        echo "Repo is installed but not in PATH. Adding to PATH."
+        if ! grep -q 'export PATH=$HOME/bin:$PATH' ~/.bashrc; then
+            echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+            source ~/.bashrc
+        fi
+        echo "Done: Repo installed and added to PATH successfully."
+    fi
 else
-    echo "Installing Repo"
+    echo "Repo not found. Installing Repo"
     mkdir -p ~/bin
     curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
     chmod a+x ~/bin/repo
-    echo "Done: Repo installed successfully."
+    # Add Repo to PATH
+    echo "Adding Repo to PATH."
+    if ! grep -q 'export PATH=$HOME/bin:$PATH' ~/.bashrc; then
+        echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+        source ~/.bashrc
+    fi
+    echo "Done: Repo installed and added to PATH successfully."
 fi
