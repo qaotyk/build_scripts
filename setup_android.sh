@@ -1,4 +1,24 @@
 #!/bin/bash
+#
+# Android Development Environment Setup Script v0.1130426
+# Powered by qaotyk <mayniakgd@gmail.com>
+#
+# Script to help set up an Android Environment on devices running Ubuntu
+# 
+# Copyright (c) 2026 qaotyk. All rights reserved.
+# This script is licensed under the MIT License.
+#
+
+# Please, use sudo bro =)
+if [ "$EUID" -ne 0 ]; then
+    echo "Scripts: Please use sudo to run this script"
+    exit 1
+fi
+# Aplly chmod +x to the script before running. Easy =)
+if [ ! -x "$0" ]; then
+    echo "Scripts: Please apply chmod +x to the script before running"
+    exit 1
+fi
 
 # Update Ubuntu system
 echo " Script Environment: Ubuntu 22.04 LTS"
