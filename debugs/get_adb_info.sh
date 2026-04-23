@@ -22,9 +22,14 @@ CHECK_ADB () {
 # Launch ADB server
 START_ADB () {
     CHECK_ADB
-    echo "Start ADB Server ..."
-    adb start-server >/dev/null 2>&1
-}  
+    if adb get-state >/dev/null 2>&1; then
+        echo "ADB  Started ..."
+        exit 0
+    else
+        echo "Starting ADB ..."
+        adb start-server >/dev/null 2>&1
+    fi
+}
 
 # Check if any Android device is connected
 CHECK_DEVICE () {
