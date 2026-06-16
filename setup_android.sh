@@ -116,9 +116,7 @@ if command -v repo &> /dev/null; then
     fi
 else
     echo "Repo not found. Installing Repo"
-    mkdir -p ~/bin
-    curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-    chmod a+x ~/bin/repo
+    sudo apt install repo -y
     # Add Repo to PATH
     echo "Adding Repo to PATH."
     if ! grep -q 'export PATH=$HOME/bin:$PATH' ~/.bashrc; then
